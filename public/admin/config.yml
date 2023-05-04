@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: louismorgan-linaro/new-website
+  branch: master
+  use_graphql: false
+  preview_context: Deploy preview
+  open_authoring: true
+publish_mode: editorial_workflow
+media_folder: "public/assets/"
+public_folder: "/assets/"
+collections:
+  - label: Homepage Data
+    name: homepage
+    editor:
+      preview: false
+    format: yaml
+    files:
+      - label: Team Members
+        name: team
+        file: _data/homepage.yml
+        fields:
+          - label: Header text
+            name: text
+            widget: string
+            required: true
+          - label: Quick Links
+            name: quick_links
+            widget: list
+            fields:
+              - label: Subject
+                name: subejct
+                widget: string
+                hint: The subject text (text in white)
+                required: true
+              - label: Link Text
+                name: text
+                widget: string
+                hint: The link text.
+                required: true
+              - label: URL
+                name: link
+                widget: string
+                hint: The URL you want this link to go to.
+                required: true
