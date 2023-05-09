@@ -55,172 +55,32 @@ collections:
           Tag pages to create a collection of related pages. If you're not sure then
           leave this blank.
         required: false
-      - label: Custom JS Package
-        name: js-package
-        widget: hidden
-        default: main
-        required: false
-      - label: Custom CSS Package
-        name: css_bundle
-        widget: hidden
-        default: main
-        required: false
       - label: Layout
         name: layout
         widget: hidden
         default: flow
         required: true
-      - label: Header
-        name: jumbotron
-        widget: object
-        fields:
-          - label: Title
-            name: title
-            required: false
-            widget: string
-          - label: Title Class
-            name: title-class
-            required: false
-            widget: string
-          - label: SVG
-            name: svg
-            hint: The name of a Jekyll HTML include containing the SVG.
-            required: false
-            widget: string
-          - label: Inner Class
-            name: inner_class
-            required: false
-            widget: string
-          - label: Description
-            name: description
-            widget: text
-            required: false
-          - label: Include
-            name: include
-            widget: string
-            hint: Provides a link to an optional header include.
-            required: false
-          - label: Slider
-            name: slider
-            widget: list
-            required: false
-            fields:
-              - label: Slide Title
-                name: title
-                required: false
-                widget: string
-              - label: Slide Description
-                name: description
-                required: false
-                default: ""
-                widget: text
-              - label: Title Class
-                name: title-class
-                required: false
-                widget: string
-                hint: Adds a css style to the title. Leave blank if unsure.
-              - label: Slide Type
-                name: type
-                required: false
-                widget: string
-                hint:
-                  Provide a slide type tag that indicates the type of the slide i.e Press
-                  Release / Blog etc.
-              - label: Slide Style
-                name: slide-class
-                widget: string
-                required: false
-                hint:
-                  Adds inline style attributes to the slide background. Leave blank if
-                  unsure.
-              - label: Darken
-                name: darken
-                widget: boolean
-                default: true
-                required: false
-                hint:
-                  Adds the dark filter to the background image. This should usually be
-                  toggled.
-              - label: Slide Image
-                name: image
-                widget: image
-                required: false
-                hint: Adds the background image for your slide.
-              - label: Slide Buttons
-                name: buttons
-                widget: list
-                required: false
-                fields:
-                  - label: Button Title
-                    name: title
-                    widget: string
-                    required: false
-                  - label: Button URL
-                    name: url
-                    widget: string
-                    required: false
-          - label: Background Image
-            name: image
-            widget: image
-            required: false
-            media_library:
-              config:
-                multiple: false
-          - label: Header Buttons
-            name: buttons
-            widget: list
-            fields:
-              - label: Button Title
-                name: title
-                widget: string
-                required: false
-                hint: The title of your button
-              - label: Button URL
-                name: url
-                widget: string
-                required: false
-                hint: The url your button will link to.
-              - label: Button Class
-                name: class
-                widget: string
-                required: false
-                hint: Add an additional class to your button for custom styling.
-              - label: Button Icon
-                name: icon
-                widget: string
-                required: false
-                hint:
-                  Optionally add a font awesome icon to your button. Required format - 'fa
-                  fa-download' visit https://fontawesome.com/v4.7.0/icons/ for a
-                  full list of icons available.
-          - label: Background Carousel Images
-            name: carousel-images
-            widget: image
-            required: false
-            media_library:
-              config:
-                multiple: true
       - label: Flow
         name: flow
         widget: list
         required: false
         fields:
-          - label: Row Type
-            name: row
+          - label: Row Component
+            name: component
             widget: select
-            default: main_content_row
+            default: Main Content
             options:
-              - main_content_row
-              - container_row
-              - full_width_row
-              - custom_include_row
+              - Main Content
+              - Container
+              - Full Width
+              - Custom
             hint:
-              Select a row type to get started. Defaults to main_content_row which will
+              Select a row type to get started. Defaults to MainContent which will
               display the 'Page Content' section inside a container.
-          - label: Custom Include Source
+          - label: Custom Component
             name: source
             widget: string
-            hint: Enter the name of a Jekyll include to use as a custom include.
+            hint: Enter the name of a component to use as a custom include.
             required: false
           - label: Absolute Image
             name: absolute_image
@@ -247,30 +107,28 @@ collections:
           - label: Sections
             name: sections
             widget: list
-            typeKey: format
+            typeKey: section_component
             required: false
-            hint:
-              Add sections to your flow row (e.g title, feature_block, buttons, block,
-              slider)
+            hint: Add sections to your flow row (e.g Title, Text, Two Columns, Slider)
             types:
-              - label: Section Format
-                name: format
+              - label: Section Component
+                name: section_component
                 widget: select
                 multiple: false
                 required: false
                 options:
-                  - title
-                  - members
-                  - text
-                  - buttons
-                  - block
-                  - custom_include
-                  - tabs
-                  - feature_block
-                  - two_column
-                  - columns
-                  - slider
-                  - youtube
+                  - Title
+                  - Members
+                  - Text
+                  - Buttons
+                  - Block
+                  - Custom
+                  - Tabs
+                  - Feature Block
+                  - Two Column
+                  - Columns
+                  - Slider
+                  - Youtube
               - label: Text
                 type: text
                 summary: "{{fields.text_content.text}}"
@@ -287,6 +145,8 @@ collections:
                       - block_row
                       - text-center
                       - text-white
+                      - text-left
+                      - text-right
                     multiple: true
                     hint: Add a style to your section.
                     required: false
@@ -300,7 +160,7 @@ collections:
               - label: Title
                 type: title
                 name: title
-                typeKey: format
+                typeKey: section_component
                 summary: "{{fields.title_content.text}}"
                 widget: object
                 fields:
@@ -448,14 +308,8 @@ collections:
                 fields:
                   - label: Section Style
                     name: style
-                    widget: select
-                    options:
-                      - zoom
-                      - grayscale
-                      - fixed
-                      - block_row
-                      - text-center
-                      - text-white
+                    hint: add tailwindcss classes here to customize styling
+                    widget: string
                     multiple: true
                     hint: Add a style to your section.
                     required: false
@@ -730,16 +584,8 @@ collections:
                 fields:
                   - label: Section Style
                     name: style
-                    widget: select
-                    options:
-                      - zoom
-                      - grayscale
-                      - fixed
-                      - block_row
-                      - text-center
-                      - text-white
-                    multiple: true
-                    hint: Add a style to your section.
+                    hint: add tailwind classes here to customize styling
+                    widget: string
                     required: false
                   - label: Left Column
                     name: left_column
@@ -766,8 +612,8 @@ collections:
                         required: false
                       - label: Style
                         name: style
-                        widget: text
-                        hint: List of css classes for your section.
+                        widget: string
+                        hint: add tailwind classes here to customize this element
                         required: false
                       - label: Text
                         name: text
@@ -804,18 +650,18 @@ collections:
                         required: false
                       - label: Style
                         name: style
-                        widget: text
-                        hint: List of css classes for your section.
+                        widget: string
+                        hint: add tailwind classes here to customize this element
                         required: false
                       - label: Text
                         name: text
                         widget: markdown
                         hint: Markdown text for your section.
                         required: false
-                      - label: Custom include
+                      - label: Custom Component
                         name: include
                         widget: text
-                        hint: An optional html include for your section.
+                        hint: Add a custom component to your section
                         required: false
               - label: Carousel Slider
                 type: slider
@@ -1038,8 +884,8 @@ collections:
                             widget: string
                             required: false
                             hint: URL for the member/company website
-              - label: Custom Include Section
-                type: custom_include
+              - label: Custom Component
+                type: section_component
                 summary: "{{fields.source}}"
                 name: custom_include
                 widget: object
@@ -1048,4 +894,4 @@ collections:
                     name: source
                     widget: string
                     required: false
-                    hint: The name of the jekyll include to use for custom include sections.
+                    hint: The name of the component

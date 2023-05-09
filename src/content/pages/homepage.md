@@ -14,34 +14,33 @@ keywords:
   - software projects
 layout: ../../layouts/Flow.astro
 flow:
-  - component: Custom
+  - row_component: Custom
     source: HomeBanner
-  - component: Custom
+  - row_component: Custom
     source: HomeHeader
-  - component: Custom
+  - row_component: Custom
     source: HomeQuickLinks
-  - component: Container
+  - row_component: Container
     style: bg-light
     sections:
-      - component: Title
+      - section_component: Title
         style: text-center
         title_content:
           style: font-weight-bold
           text: Linaro Members
           size: h2
-      - component: Custom
+      - section_component: Custom
         source: HomeMembers
-      - component: Custom
+      - section_component: Custom
         source: HomeTestimonial
-  - component: Container
+  - row_component: Container
     style: bg-white py-0 overflow-hidden
     absolute_image:
       style: rocket_svg px-0
       image: RocketGraphic.svg
       image_alt: Linaro Developer Services rocket launching upwards
     sections:
-      - component: TwoColumn
-        style: #
+      - section_component: TwoColumn
         breakpoint: md
         left_column:
           custom_size: 6
@@ -56,32 +55,31 @@ flow:
             - title: Find out more about Linaro Developer Services
               url: /services/
               class: btn-primary
-  - component: Container
+  - row_component: Container
     style: bg-secondary text-white
     sections:
-      - component: Title
+      - section_component: Title
         style: text-center
         title_content:
           style: font-weight-bold
           text: Experts in Open Source Software on Arm
           size: h2
-      - component: Custom
+      - section_component: Custom
         source: HomeStats
-  - component: Custom
+  - row_component: Custom
     source: HomeMaintainers
-  - component: Container
+  - row_component: Container
     style: bg-secondary py-0 mb-5 text-white
     sections:
-      - component: Title
-        style: ""
+      - section_component: Title
         title_content:
           style: font-weight-bold
           text: Projects Linaro and its member companies collaborate on
           size: h2
-      - component: Text
+      - section_component: Text
         style: text-left
         text_content:
           text: This is a snapshot of some of the projects Linaro works on
-      - component: Custom
+      - section_component: Custom
         source: HomeProjects
 ---

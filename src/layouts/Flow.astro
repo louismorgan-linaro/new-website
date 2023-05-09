@@ -49,14 +49,14 @@ const {
     <main class="flex flex-col w-full">
       {
         flow.map((row: any) => {
-          const { component, source, sections, ...rowProps } = row
+          const { row_component: component, source, sections, ...rowProps } = row
           const RowComp =
             component === "Custom" ? rowComponents[source] : rowComponents[component];
 
           return RowComp ? (
             <RowComp {...rowProps}>
               {sections ? sections.map((section: any) => {
-                const {component, source, ...sectionProps} = section
+                const {section_component: component, source, ...sectionProps} = section
                 const SectionComp = component === "Custom" ? sectionComponents[source] : sectionComponents[component]
                 return SectionComp ? <SectionComp {...sectionProps} /> : <div>Not implemented</div>
               }) : <></>}
