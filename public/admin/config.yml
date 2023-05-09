@@ -13,6 +13,11 @@ media_library:
   config:
     cloud_name: dktnymsbc
     api_key: 996477583627513
+    default_transformations:
+      - - fetch_format: auto
+          width: 160
+          quality: auto
+          crop: scale
 # media_folder: src/assets
 public_folder: /assets
 collections:
