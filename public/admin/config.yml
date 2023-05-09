@@ -13,7 +13,7 @@ media_library:
   config:
     cloud_name: dktnymsbc
     api_key: 996477583627513
-media_folder: src/assets
+# media_folder: src/assets
 public_folder: /assets
 collections:
   - label: Pages
