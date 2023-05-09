@@ -3,7 +3,6 @@ backend:
   repo: louismorgan-linaro/new-website
   branch: main
   use_graphql: false
-  local_backend: true
   preview_context: Deploy preview
   open_authoring: true
 publish_mode: editorial_workflow
@@ -23,7 +22,7 @@ public_folder: /assets
 collections:
   - label: Pages
     name: pages
-    folder: src/cms/pages
+    folder: src/content/pages
     identifier_field: permalink
     summary: "{{fields.title}} - {{fields.permalink}}"
     editor:
