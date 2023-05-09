@@ -137,16 +137,7 @@ collections:
                 fields:
                   - label: Section Style
                     name: style
-                    widget: select
-                    options:
-                      - zoom
-                      - grayscale
-                      - fixed
-                      - block_row
-                      - text-center
-                      - text-white
-                      - text-left
-                      - text-right
+                    widget: string
                     multiple: true
                     hint: Add a style to your section.
                     required: false
@@ -311,7 +302,6 @@ collections:
                     hint: add tailwindcss classes here to customize styling
                     widget: string
                     multiple: true
-                    hint: Add a style to your section.
                     required: false
                   - label: Tabs Section Content
                     name: tabs
@@ -427,14 +417,7 @@ collections:
                 fields:
                   - label: Section Style
                     name: style
-                    widget: select
-                    options:
-                      - zoom
-                      - grayscale
-                      - fixed
-                      - block_row
-                      - text-center
-                      - text-white
+                    widget: string
                     multiple: true
                     hint: Add a style to your section.
                     required: false
