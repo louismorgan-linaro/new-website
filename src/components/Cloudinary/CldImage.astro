@@ -1,0 +1,37 @@
+---
+import { Cloudinary } from "@cloudinary/url-gen";
+import type { IDeliveryAction } from "@cloudinary/url-gen/actions/delivery";
+import type { CloudinaryTransformable } from "@cloudinary/url-gen/assets/CloudinaryTransformable";
+
+interface Props {
+  src: string;
+  width?: string | number;
+  height?: string | number;
+  alt?: string;
+  class?: string;
+}
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
+  },
+});
+
+const { src, ...props } = Astro.props;
+
+let cldSrc = cld
+  .image(src)
+  .format("auto")
+  .delivery("q_auto" as unknown as IDeliveryAction);
+// .resize({
+//   width: props.width,
+//   height: props.height,
+//   alt: props.alt,
+// } as unknown as any);
+
+if (src.startsWith("https://")) {
+  cldSrc.setDeliveryType("fetch");
+}
+---
+
+<img src={cldSrc.toURL()} loading="lazy" {...props} />

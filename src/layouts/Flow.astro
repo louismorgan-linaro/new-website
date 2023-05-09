@@ -1,0 +1,70 @@
+---
+
+import '@fontsource/lato';
+
+
+const rowComponents = await Astro.glob("../components/Flow/Rows/**/*.astro").then(
+  (res) =>
+    res.reduce(
+      (obj, comp) => ({
+        ...obj,
+        [comp.default.name]: comp.default,
+      }),
+      {} as Record<string, any>
+    )
+);
+
+
+const sectionComponents = await Astro.glob("../components/Flow/Sections/**/*.astro").then(
+  (res) =>
+    res.reduce(
+      (obj, comp) => ({
+        ...obj,
+        [comp.default.name]: comp.default,
+      }),
+      {} as Record<string, any>
+    )
+);
+
+
+const {
+  content: { title, flow },
+} = Astro.props;
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- <nav>
+      <a href="#">Home</a>
+      <a href="#">Posts</a>
+      <a href="#">Contact</a>
+    </nav> -->
+    <!-- <h1>{title}</h1> -->
+    <main class="flex flex-col w-full">
+      {
+        flow.map((row: any) => {
+          const { component, source, sections, ...rowProps } = row
+          const RowComp =
+            component === "Custom" ? rowComponents[source] : rowComponents[component];
+
+          return RowComp ? (
+            <RowComp {...rowProps}>
+              {sections ? sections.map((section: any) => {
+                const {component, source, ...sectionProps} = section
+                const SectionComp = component === "Custom" ? sectionComponents[source] : sectionComponents[component]
+                return SectionComp ? <SectionComp {...sectionProps} /> : <div>Not implemented</div>
+              }) : <></>}
+            </RowComp>
+          ) : <div>Not implemented</div>;
+        })
+      }
+    </main>
+    <!-- <Footer /> -->
+  </body>
+</html>

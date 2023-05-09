@@ -4,7 +4,7 @@ description: The collaboration platform for the Arm partnership. Where members
   can collaborate on Arm Open Source Software and solutions are discussed &
   worked upon.
 permalink: /homepage
-slug: ""
+slug: homepage
 keywords:
   - arm software
   - engineering
@@ -12,42 +12,40 @@ keywords:
   - linaro
   - linux
   - software projects
-js-package: home
-css_bundle: home
-layout: ../../layouts/flow.astro
+layout: ../../layouts/Flow.astro
 flow:
-  - row: custom_include_row
-    source: home/banner.html
-  - row: custom_include_row
-    source: home/homepage_header.html
-  - row: custom_include_row
-    source: home/quick_links.html
-  - row: container_row
-    style: bg-light members_section
+  - component: Custom
+    source: HomeBanner
+  - component: Custom
+    source: HomeHeader
+  - component: Custom
+    source: HomeQuickLinks
+  - component: Container
+    style: bg-light
     sections:
-      - format: title
+      - component: Title
         style: text-center
         title_content:
           style: font-weight-bold
           text: Linaro Members
           size: h2
-      - format: custom_include
-        source: membership/members_section.html
-      - format: custom_include
-        source: home/member_testimonials.html
-  - row: container_row
-    style: bg-white lds_section py-0 overflow-hidden
+      - component: Custom
+        source: HomeMembers
+      - component: Custom
+        source: HomeTestimonial
+  - component: Container
+    style: bg-white py-0 overflow-hidden
     absolute_image:
       style: rocket_svg px-0
-      image: /assets/images/content/RocketGraphic.svg
+      image: RocketGraphic.svg
       image_alt: Linaro Developer Services rocket launching upwards
     sections:
-      - format: two_column
+      - component: TwoColumn
         style: #
         breakpoint: md
         left_column:
           custom_size: 6
-          style: px-3 py-5
+          style: px-3 py-5 prose-p:text-lg md:prose-p:text-2xl
           text: |
             ## Linaro Developer Services
 
@@ -58,32 +56,32 @@ flow:
             - title: Find out more about Linaro Developer Services
               url: /services/
               class: btn-primary
-  - row: container_row
-    style: bg-secondary stats_row text-white
+  - component: Container
+    style: bg-secondary text-white
     sections:
-      - format: title
+      - component: Title
         style: text-center
         title_content:
           style: font-weight-bold
           text: Experts in Open Source Software on Arm
           size: h2
-      - format: custom_include
-        source: home/stats_row.html
-  - row: custom_include_row
-    source: about/maintainers_by_project.html
-  - row: container_row
-    style: bg-secondary text-white py-0 mb-5 project_collab_section
+      - component: Custom
+        source: HomeStats
+  - component: Custom
+    source: HomeMaintainers
+  - component: Container
+    style: bg-secondary py-0 mb-5 text-white
     sections:
-      - format: title
+      - component: Title
         style: ""
         title_content:
           style: font-weight-bold
           text: Projects Linaro and its member companies collaborate on
           size: h2
-      - format: text
+      - component: Text
         style: text-left
         text_content:
           text: This is a snapshot of some of the projects Linaro works on
-      - format: custom_include
-        source: home/projects_section.html
+      - component: Custom
+        source: HomeProjects
 ---

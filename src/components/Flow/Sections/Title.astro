@@ -1,0 +1,10 @@
+---
+const {
+  style,
+  title_content: { style: titleStyle, text, size: TitleComp },
+} = Astro.props;
+---
+
+<div class={(style || "") + " py-4"}>
+  <TitleComp class={(titleStyle || "") + ""}>{text}</TitleComp>
+</div>

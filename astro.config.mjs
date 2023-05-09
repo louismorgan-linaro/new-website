@@ -1,9 +1,13 @@
 import { defineConfig } from 'astro/config';
-
-import netlify from "@astrojs/netlify/functions";
+import tailwind from "@astrojs/tailwind";
+import markdownIntegration from '@astropub/md'
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
-  // adapter: netlify()
+  output: "static"
+  ,
+  integrations: [
+    tailwind({config: { applyBaseStyles: false }}),
+    markdownIntegration(),
+  ],
 });

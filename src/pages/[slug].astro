@@ -1,21 +1,18 @@
 ---
+import "../styles/global.scss";
 export async function getStaticPaths() {
-  const pages = await Astro.glob('../cms/pages/*.md')
-  console.log('aaaa', pages[0].frontmatter)
-  return pages.map(page => ({
-    params: { 
-      slug: page.frontmatter.slug
+  const pages = await Astro.glob("../content/pages/**/*.md");
+  return pages.map((page) => ({
+    params: {
+      slug: page.frontmatter.slug,
     },
     props: {
-      page
+      page,
     },
-  }))
+  }));
 }
 
-const { Content } = Astro.props.page
-
-console.log(Content)
+const { Content } = Astro.props.page;
 ---
-<article>
-  <Content/>
-</article>
+
+<Content />

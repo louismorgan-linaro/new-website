@@ -11,6 +11,16 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^2.2.2",
-    "astro": "^2.2.1"
+    "@astrojs/tailwind": "^3.1.2",
+    "@astropub/md": "^0.2.0",
+    "@cloudinary/url-gen": "^1.10.0",
+    "@fontsource/lato": "^4.5.10",
+    "astro": "^2.3.3",
+    "sass": "^1.62.1",
+    "scss": "^0.2.4",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9"
   }
 }

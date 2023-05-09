@@ -1,0 +1,21 @@
+---
+import { Markdown } from "@astropub/md";
+const { left_column, right_column, style, breakpoint } = Astro.props;
+---
+
+<div
+  class={(style || "") + ` flex flex-col items-center ${breakpoint}:flex-row`}
+>
+  <div
+    class={`prose flex-basis-1/2 ${breakpoint}:w-1/2 text-color-inherit` +
+      (left_column?.style || "")}
+  >
+    <Markdown of={left_column?.text || ""} />
+  </div>
+  <div
+    class={`prose flex-basis-1/2 ${breakpoint}:w-1/2 text-color-inherit` +
+      (right_column?.style || "")}
+  >
+    <Markdown of={right_column?.text || ""} />
+  </div>
+</div>

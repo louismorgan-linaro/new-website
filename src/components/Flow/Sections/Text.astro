@@ -1,0 +1,13 @@
+---
+import { Markdown } from "@astropub/md";
+const {
+  style,
+  text_content: { text },
+} = Astro.props;
+---
+
+<div class={"prose py-4 text-color-inherit " + (style || "")}>
+  <Markdown of={text} />
+</div>
+
+<style lang="scss"></style>
