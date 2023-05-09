@@ -130,7 +130,7 @@ collections:
                   - Slider
                   - Youtube
               - label: Text
-                type: text
+                type: Text
                 summary: "{{fields.text_content.text}}"
                 name: text
                 widget: object
@@ -149,8 +149,8 @@ collections:
                         widget: markdown
                         name: text
               - label: Title
-                type: title
-                name: title
+                type: Title
+                name: Title
                 typeKey: section_component
                 summary: "{{fields.title_content.text}}"
                 widget: object
@@ -193,8 +193,8 @@ collections:
                           - label: "5"
                             value: h5
               - label: Blocks
-                type: block
-                name: block
+                type: Block
+                name: Block
                 widget: object
                 fields:
                   - label: Section Style
@@ -293,8 +293,8 @@ collections:
                                 required: false
                                 hint: btn-primary, btn-secondary, btn-danger, btn-warning
               - label: Tabs
-                type: tabs
-                name: tabs
+                type: Tabs
+                name: Tabs
                 widget: object
                 fields:
                   - label: Section Style
@@ -320,8 +320,8 @@ collections:
                         hint: Markdown content for your tab.
                         required: false
               - label: Columns
-                type: columns
-                name: columns
+                type: Columns
+                name: Columns
                 widget: object
                 fields:
                   - label: Section Anchor
@@ -411,8 +411,8 @@ collections:
                         widget: string
                         required: false
               - label: Feature Block
-                type: feature_block
-                name: feature_block
+                type: Feature Block
+                name: FeatureBlock
                 widget: object
                 fields:
                   - label: Section Style
@@ -561,8 +561,8 @@ collections:
                     required: false
                     hint: A name of a Jekyll data file to use for the source of items
               - label: Two Column
-                type: two_column
-                name: two_column
+                type: Two Column
+                name: TwoColumn
                 widget: object
                 fields:
                   - label: Section Style
@@ -647,8 +647,8 @@ collections:
                         hint: Add a custom component to your section
                         required: false
               - label: Carousel Slider
-                type: slider
-                name: slider
+                type: Slider
+                name: Slider
                 widget: object
                 fields:
                   - label: Section Style
@@ -729,8 +729,8 @@ collections:
                         required: false
                         hint: A name of a Jekyll data file to use for the source of items
               - label: Buttons
-                type: buttons
-                name: buttons
+                type: Buttons
+                name: Buttons
                 widget: object
                 fields:
                   - label: Section Style
@@ -771,8 +771,8 @@ collections:
                         required: false
                         hint: btn-primary, btn-secondary, btn-danger, btn-warning
               - label: YouTube
-                type: youtube
-                name: youtube
+                type: Youtube
+                name: Youtube
                 widget: object
                 summary: "{{fields.title}}"
                 fields:
@@ -800,8 +800,8 @@ collections:
                     hint: Title of the video used for SEO/captions
                     required: true
               - label: Members
-                type: members
-                name: members
+                type: Members
+                name: Members
                 widget: object
                 fields:
                   - label: Section Style
