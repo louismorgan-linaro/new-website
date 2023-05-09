@@ -66,7 +66,7 @@ collections:
         required: false
         fields:
           - label: Row Component
-            name: component
+            name: row_component
             widget: select
             default: Main Content
             options:
