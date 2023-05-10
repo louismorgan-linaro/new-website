@@ -859,8 +859,8 @@ collections:
                             required: false
                             hint: URL for the member/company website
               - label: Custom Component
+                name: Custom
                 summary: "{{fields.source}}"
-                name: custom_include
                 widget: object
                 fields:
                   - label: Source
