@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: louismorgan-linaro/new-website
-  branch: main
+  branch: development
   use_graphql: false
   preview_context: Deploy preview
   open_authoring: true
@@ -191,7 +191,6 @@ collections:
                           - label: "5"
                             value: h5
               - label: Blocks
-                type: Block
                 name: Block
                 widget: object
                 fields:
@@ -291,7 +290,6 @@ collections:
                                 required: false
                                 hint: btn-primary, btn-secondary, btn-danger, btn-warning
               - label: Tabs
-                type: Tabs
                 name: Tabs
                 widget: object
                 fields:
@@ -318,7 +316,6 @@ collections:
                         hint: Markdown content for your tab.
                         required: false
               - label: Columns
-                type: Columns
                 name: Columns
                 widget: object
                 fields:
@@ -495,7 +492,7 @@ collections:
                             required: false
                             hint: btn-primary, btn-secondary, btn-danger, btn-warning
                   - label: Slider Content
-                    name: slider_content
+                    name: SliderContent
                     widget: object
                     hint: The content details of a slider section
                     required: false
@@ -559,7 +556,6 @@ collections:
                     required: false
                     hint: A name of a Jekyll data file to use for the source of items
               - label: Two Column
-                type: Two Column
                 name: TwoColumn
                 widget: object
                 fields:
@@ -727,7 +723,6 @@ collections:
                         required: false
                         hint: A name of a Jekyll data file to use for the source of items
               - label: Buttons
-                type: Buttons
                 name: Buttons
                 widget: object
                 fields:
@@ -769,7 +764,6 @@ collections:
                         required: false
                         hint: btn-primary, btn-secondary, btn-danger, btn-warning
               - label: YouTube
-                type: Youtube
                 name: Youtube
                 widget: object
                 summary: "{{fields.title}}"
@@ -798,7 +792,6 @@ collections:
                     hint: Title of the video used for SEO/captions
                     required: true
               - label: Members
-                type: Members
                 name: Members
                 widget: object
                 fields:
@@ -866,7 +859,6 @@ collections:
                             required: false
                             hint: URL for the member/company website
               - label: Custom Component
-                type: section_component
                 summary: "{{fields.source}}"
                 name: custom_include
                 widget: object
