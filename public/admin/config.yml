@@ -124,8 +124,8 @@ collections:
                   - Block
                   - Custom
                   - Tabs
-                  - Feature Block
-                  - Two Column
+                  - FeatureBlock
+                  - TwoColumn
                   - Columns
                   - Slider
                   - Youtube
