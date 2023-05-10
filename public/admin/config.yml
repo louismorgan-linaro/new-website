@@ -17,7 +17,7 @@ media_library:
           width: 160
           quality: auto
           crop: scale
-# media_folder: src/assets
+media_folder: src/assets
 public_folder: /assets
 collections:
   - label: Pages
@@ -102,7 +102,7 @@ collections:
           - label: Row Style
             name: style
             widget: string
-            hint: Enter an optional style to be applied to your row.
+            hint: add tailwindcss classes here to customize styling
             required: false
           - label: Sections
             name: sections
@@ -130,9 +130,8 @@ collections:
                   - Slider
                   - Youtube
               - label: Text
-                type: Text
+                name: Text
                 summary: "{{fields.text_content.text}}"
-                name: text
                 widget: object
                 fields:
                   - label: Section Style
@@ -149,7 +148,6 @@ collections:
                         widget: markdown
                         name: text
               - label: Title
-                type: Title
                 name: Title
                 typeKey: section_component
                 summary: "{{fields.title_content.text}}"
@@ -166,7 +164,7 @@ collections:
                       - text-center
                       - text-white
                     multiple: true
-                    hint: Add a style to your section.
+                    hint: add tailwindcss classes here to customize styling
                     required: false
                   - label: Title Section Content
                     name: title_content
