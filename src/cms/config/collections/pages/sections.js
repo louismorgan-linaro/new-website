@@ -1,5 +1,4 @@
 const sectionTypes = [
-    [
         {
           label: "Section Component",
           name: "section_component",
@@ -1083,7 +1082,5 @@ const sectionTypes = [
             }
           ]
         }
-      ]
 ]
-
-export {sectionTypes}
+export default sectionTypes

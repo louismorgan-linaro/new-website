@@ -58,7 +58,7 @@ const pagesCollection = {
       name: "flow",
       widget: "list",
       required: false,
-      files: flowFields
+      fields: [...flowFields]
     }
   ]
 };

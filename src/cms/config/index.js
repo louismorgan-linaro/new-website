@@ -2,7 +2,6 @@ window.CMS_MANUAL_INIT = true
 // Usage with import from npm package
 import CMS, { init } from 'netlify-cms'
 
-
 // Initialize NetlifyCMS with the JS configuration objext
 
 import pagesCollection from "./collections/pages";
@@ -25,8 +24,8 @@ const config = {
     name: "cloudinary",
     output_file_name_only: true,
     config: {
-      cloud_name: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
-      api_key: import.meta.env.PUBLIC_CLOUDINARY_API_KEY,
+      cloud_name: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME,
+      api_key: import.meta.env.VITE_CLOUDINARY_API_KEY,
       default_transformations: {
         fetch_format: "auto",
         width: 160,
@@ -38,7 +37,6 @@ const config = {
   media_folder: "src/assets",
   public_folder: "/assets",
   collections: [
-    // Include the collections imported from cms/config/collections
     pagesCollection,
   ],
 };

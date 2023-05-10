@@ -1,4 +1,4 @@
-import {sectionTypes} from './sections'
+import sectionTypes from './sections'
 
 const flowFields = [
     {
@@ -65,4 +65,4 @@ const flowFields = [
       }
 ]
 
-export default {flowFields}
+export default flowFields

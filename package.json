@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build-netlify": "node src/cms/config/build.mjs",
-    "build": "astro build",
+    "build-netlify-config": "node src/cms/config/build.mjs",
+    "build": "astro build & $npm_execpath run build-netlify-config",
     "preview": "astro preview",
     "astro": "astro"
   },
