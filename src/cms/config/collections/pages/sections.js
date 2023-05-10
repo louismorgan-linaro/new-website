@@ -1,4 +1,4 @@
-export default sectionTypes = [
+const sectionTypes = [
     [
         {
           label: "Section Component",
@@ -1085,3 +1085,5 @@ export default sectionTypes = [
         }
       ]
 ]
+
+export {sectionTypes}

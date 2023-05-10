@@ -1,6 +1,6 @@
-import sectionTypes from './sections'
+import {sectionTypes} from './sections'
 
-export default flowFields = [
+const flowFields = [
     {
         label: "Row Component",
         name: "row_component",
@@ -64,3 +64,5 @@ export default flowFields = [
         types: sectionTypes,
       }
 ]
+
+export default {flowFields}

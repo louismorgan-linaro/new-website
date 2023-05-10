@@ -1,11 +1,11 @@
-// Disable loading of the configuration from the default config.yml file
-window.CMS_MANUAL_INIT = true;
-// Initialize NetlifyCMS with the JS configuration objext
-window.CMS_CONFIGURATION = config;
+window.CMS_MANUAL_INIT = true
+// Usage with import from npm package
+import CMS, { init } from 'netlify-cms'
 
-import { auto } from "@cloudinary/url-gen/qualifiers/quality";
+
+// Initialize NetlifyCMS with the JS configuration objext
+
 import pagesCollection from "./collections/pages";
-import CMS from "netlify-cms";
 import "netlify-cms/dist/cms.css";
 // Build the Netlify JS configuration object
 const config = {
@@ -25,8 +25,8 @@ const config = {
     name: "cloudinary",
     output_file_name_only: true,
     config: {
-      cloud_name: process.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
-      api_key: process.env.PUBLIC_CLOUDINARY_API_KEY,
+      cloud_name: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
+      api_key: import.meta.env.PUBLIC_CLOUDINARY_API_KEY,
       default_transformations: {
         fetch_format: "auto",
         width: 160,
@@ -43,9 +43,12 @@ const config = {
   ],
 };
 
+// Make the config object available on the global scope for processing by
+// subsequent scripts.Don't rename this to `CMS_CONFIG` - it will cause the
+// config to be loaded without proper processing.
+window.CMS_CONFIGURATION = config;
 
-
-CMS.init({ config });
+init({ config });
 // Register the custom editor component
 
 export default config;
