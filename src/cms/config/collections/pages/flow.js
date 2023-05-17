@@ -61,7 +61,30 @@ const flowFields = [
         typeKey: "section_component",
         required: false,
         hint: "Add sections to your flow row (e.g Title, Text, Two Columns, Slider)",
-        types: sectionTypes,
+        types: [
+          {
+            label: "Section Component",
+            name: "section_component",
+            widget: "select",
+            multiple: false,
+            required: false,
+            options: [
+              "Title",
+              "Members",
+              "Text",
+              "Buttons",
+              "Block",
+              "Custom",
+              "Tabs",
+              "FeatureBlock",
+              "TwoColumn",
+              "Columns",
+              "Slider",
+              "Youtube"
+            ]
+          },
+          ...sectionTypes,
+        ],
       }
 ]
 
