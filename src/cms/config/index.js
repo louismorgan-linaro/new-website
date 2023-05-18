@@ -1,6 +1,6 @@
-window.CMS_MANUAL_INIT = true
+window.CMS_MANUAL_INIT = true;
 // Usage with import from npm package
-import CMS, { init } from 'netlify-cms'
+import CMS, { init } from "netlify-cms";
 
 // Initialize NetlifyCMS with the JS configuration objext
 
@@ -36,9 +36,7 @@ const config = {
   },
   media_folder: "src/assets",
   public_folder: "/assets",
-  collections: [
-    pagesCollection,
-  ],
+  collections: [pagesCollection],
 };
 
 // Make the config object available on the global scope for processing by
