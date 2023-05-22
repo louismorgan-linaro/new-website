@@ -1,9 +1,10 @@
 ---
 
 import '@fontsource/lato';
+import NavBar from '../components/Nav/NavBar.astro';
 
 
-const rowComponents = await Astro.glob("../components/Flow/Rows/**/*.astro").then(
+const rowComponents = await Astro.glob("../components/Layouts/Flow/Rows/**/*.astro").then(
   (res) =>
     res.reduce(
       (obj, comp) => ({
@@ -15,7 +16,7 @@ const rowComponents = await Astro.glob("../components/Flow/Rows/**/*.astro").the
 );
 
 
-const sectionComponents = await Astro.glob("../components/Flow/Sections/**/*.astro").then(
+const sectionComponents = await Astro.glob("../components/Layouts/Flow/Sections/**/*.astro").then(
   (res) =>
     res.reduce(
       (obj, comp) => ({
@@ -40,6 +41,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <NavBar />
     <!-- <nav>
       <a href="#">Home</a>
       <a href="#">Posts</a>

@@ -3,7 +3,7 @@ title: Accelerating deployment of Arm-based solutions
 description: The collaboration platform for the Arm partnership. Where members
   can collaborate on Arm Open Source Software and solutions are discussed &
   worked upon.
-permalink: /homepage
+permalink: /
 slug: homepage
 keywords:
   - arm software

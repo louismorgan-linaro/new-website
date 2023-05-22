@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon";
+import * as navData from "../../content/data/nav.md";
+import CldImage from "../Cloudinary/CldImage.astro";
+import NavLinks from "./NavLinks";
+console.log(navData.frontmatter.pages[0].options[3]);
+
+const { pages, brand } = navData.frontmatter as {
+  pages: {
+    title: string;
+    options: {
+      text: string;
+      url: string;
+    }[];
+  }[];
+  brand: {
+    path: string;
+    alt: string;
+  };
+};
+---
+
+<nav class="sticky top-0 z-10 bg-white w-screen">
+  <div
+    class="container mx-auto flex flex-row flex-wrap justify-between lg:justify-around px-4 py-1 items-center max-w-6xl"
+  >
+    <CldImage height="60" src={brand.path} />
+    <NavLinks pages={pages} client:load />
+  </div>
+</nav>

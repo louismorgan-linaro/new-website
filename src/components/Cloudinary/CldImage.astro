@@ -21,12 +21,16 @@ const { src, ...props } = Astro.props;
 let cldSrc = cld
   .image(src)
   .format("auto")
-  .delivery("q_auto:good" as unknown as IDeliveryAction);
-// .resize({
-//   width: props.width,
-//   height: props.height,
-//   alt: props.alt,
-// } as unknown as any);
+  .delivery("q_auto:good" as unknown as IDeliveryAction)
+  .resize(
+    props.height || props.width
+      ? props.height
+        ? `h_${props.height}`
+        : "" + props.width
+        ? `w_${props.width}`
+        : ""
+      : ("" as unknown as any)
+  );
 
 if (src.startsWith("https://")) {
   cldSrc.setDeliveryType("fetch");
