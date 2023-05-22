@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build-netlify-config": "node src/cms/config/build.mjs",
+    "build": "astro build & $npm_execpath run build-netlify-config",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,11 +17,14 @@
     "@cloudinary/url-gen": "^1.10.0",
     "@fontsource/lato": "^4.5.10",
     "astro": "^2.3.3",
+    "netlify-cms": "^2.10.192",
     "sass": "^1.62.1",
     "scss": "^0.2.4",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.1.2",
+    "vite": "^4.3.5"
   }
 }

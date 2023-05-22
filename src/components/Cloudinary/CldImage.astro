@@ -1,7 +1,6 @@
 ---
 import { Cloudinary } from "@cloudinary/url-gen";
 import type { IDeliveryAction } from "@cloudinary/url-gen/actions/delivery";
-import type { CloudinaryTransformable } from "@cloudinary/url-gen/assets/CloudinaryTransformable";
 
 interface Props {
   src: string;
@@ -22,7 +21,7 @@ const { src, ...props } = Astro.props;
 let cldSrc = cld
   .image(src)
   .format("auto")
-  .delivery("q_auto" as unknown as IDeliveryAction);
+  .delivery("q_auto:good" as unknown as IDeliveryAction);
 // .resize({
 //   width: props.width,
 //   height: props.height,

@@ -4,8 +4,7 @@ import markdownIntegration from '@astropub/md'
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static"
-  ,
+  output: "static",
   integrations: [
     tailwind({config: { applyBaseStyles: false }}),
     markdownIntegration(),
