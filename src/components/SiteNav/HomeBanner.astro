@@ -1,0 +1,281 @@
+---
+import TwitterIcon from "../../../../ThemeIcon.astro/icon-twitter.png";
+import FacebookIcon from "../../../../ThemeIcon.astro/icon-facebook.png";
+import YoutubeIcon from "../../../../ThemeIcon.astro/icon-youtube.png";
+import LinkedInIcon from "../../../../ThemeIcon.astro/icon-linkedin.png";
+import MenuIcon from "../../../../ThemeIcon.astro/menu_icon.png";
+import CloseIcon from "../../../../ThemeIcon.astro/close_icon.png";
+
+let showMenu: boolean = true;
+---
+
+<nav class="bg-lime-500 static pt-0 pb-0">
+  <div
+    class="max-w-screen-xl initial flex items-center justify-end mx-auto p-0"
+  >
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul
+        class="font-medium flex flex-col p-0 md:p-0 mt-2 bg-lime-500 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            href="https://www.linaroforge.com/"
+            class="block py-2 pl-3 pr-4 text-black bg-blue-700 hover:text-white rounded md:bg-transparent md:p-0"
+            aria-current="page">Linaro Forge</a
+          >
+        </li>
+        <li>
+          <a
+            href="/connect"
+            class="block py-2 pl-3 pr-4 text-black bg-blue-700 hover:text-white rounded md:bg-transparent md:p-0"
+            >Connect</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.codelinaro.org/"
+            class="block py-2 pl-3 pr-4 text-black bg-blue-700 hover:text-white rounded md:bg-transparent md:p-0"
+            >CodeLinaro</a
+          >
+        </li>
+        <li class="flex items-center">
+          <a
+            href="https://twitter.com/LinaroOrg"
+            class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+          >
+            <div class="hover:brightness-50">
+              <img src={TwitterIcon} class="w-6 h-6 mr-2" alt="Twitter" />
+            </div>
+          </a>
+        </li>
+        <li class="flex items-center rounded hover:text-black">
+          <a
+            href="https://www.facebook.com/LinaroOrg"
+            class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+          >
+            <div class="hover:brightness-50">
+              <img src={FacebookIcon} class="w-6 h-6 mr-2" alt="Facebook" />
+            </div>
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a
+            href="https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F1026961"
+            class="flex items-center text-black rounded"
+          >
+            <div class="hover:brightness-50">
+              <img src={LinkedInIcon} class="w-6 h-6 mr-2" alt="LinkedIn" />
+            </div>
+          </a>
+        </li>
+
+        <li class="flex items-center">
+          <a
+            href="https://www.youtube.com/LinaroOrg"
+            class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+          >
+            <div class="hover:brightness-50">
+              <img src={YoutubeIcon} class="w-6 h-6 mr-2" alt="Youtube" />
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button
+      id="hamburgerButton"
+      data-collapse-toggle="navbar-hamburger"
+      type="button"
+      class="inline-flex items-center p-2 ml-3 text-sm text-black rounded-lg hover:text-white"
+      aria-controls="navbar-hamburger"
+      aria-expanded="false"
+    >
+      <img
+        src={showMenu ? MenuIcon : CloseIcon}
+        id="menuIcon"
+        class="w-6 h-6 mr-2"
+      />
+    </button>
+  </div>
+  <div class="hidden" id="navbarMobile">
+    <div class="flex flex-col space-y-4 text-center items-center">
+      <!-- Nav items for mobile -->
+      <a
+        href="https://www.linaroforge.com/"
+        class="block py-2 pl-3 pr-4 text-black hover:text-white rounded md:bg-transparent md:p-0"
+        aria-current="page">Linaro Forge</a
+      >
+      <a
+        href="/connect"
+        class="block py-2 pl-3 pr-4 text-black hover:text-white rounded md:bg-transparent md:p-0"
+        >Connect</a
+      >
+      <a
+        href="https://www.codelinaro.org/"
+        class="block py-2 pl-3 pr-4 text-black hover:text-white rounded md:bg-transparent md:p-0"
+        >CodeLinaro</a
+      >
+
+      <button
+        id="dropdownNavbarLink"
+        data-dropdown-toggle="dropdownNavbar"
+        class="flex items-center pb-5"
+        >Projects <svg
+          class="w-5 h-5 ml-1"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path></svg
+        ></button
+      >
+
+      <!-- Dropdown menu -->
+      <div id="dropdownNavbar" class="z-10 hidden font-normal w-full">
+        <ul
+          class="py-2 text-gray-700 bg-white w-4/5 mx-auto mb-2"
+          aria-labelledby="dropdownLargeButton"
+        >
+          <li>
+            <a
+              href="https://www.openampproject.org/"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              >OpenAMP</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.trustedfirmware.org/projects/op-tee/"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              >OP-TEE</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.trustedfirmware.org/"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              >Trusted Firmware</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.trustedfirmware.org/projects/mcuboot/index.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              >MCUboot</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="flex space-x-4">
+        <a
+          href="https://twitter.com/LinaroOrg"
+          class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+        >
+          <div class="hover:brightness-50">
+            <img src={TwitterIcon} class="w-6 h-6 mr-2" alt="Twitter" />
+          </div>
+        </a>
+        <a
+          href="https://www.facebook.com/LinaroOrg"
+          class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+        >
+          <div class="hover:brightness-50">
+            <img src={FacebookIcon} class="w-6 h-6 mr-2" alt="Facebook" />
+          </div>
+        </a>
+        <a
+          href="https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F1026961"
+          class="flex items-center text-black rounded"
+        >
+          <div class="hover:brightness-50">
+            <img src={LinkedInIcon} class="w-6 h-6 mr-2" alt="LinkedIn" />
+          </div>
+        </a>
+        <a
+          href="https://www.youtube.com/LinaroOrg"
+          class="w-6 h-6 mr-2 hover:filter hover:grayscale"
+        >
+          <div class="hover:brightness-50">
+            <img src={YoutubeIcon} class="w-6 h-6 mr-2" alt="Youtube" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="hidden w-full absolute top-12 mt-0 z-50" id="navbar-hamburger">
+  <div class="bg-[#f9f9f9] w-48 flex p-4 lg:ml-[90%] xl:ml-[65%]">
+    <ul class="font-medium flex flex-col w-full">
+      <li>
+        <a
+          href="https://www.openampproject.org/"
+          class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          >OpenAMP</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.trustedfirmware.org/projects/op-tee/"
+          class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          >OP-TEE</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.trustedfirmware.org/"
+          class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+          >Trusted Firmware</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.trustedfirmware.org/projects/mcuboot/index.html"
+          class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#99cc33] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          >MCUboot</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerButton = document.getElementById("hamburgerButton");
+    const navbarMobile = document.getElementById("navbarMobile");
+    const navbarHamburger = document.getElementById("navbar-hamburger");
+    const dropdownNavbarLink = document.getElementById("dropdownNavbarLink");
+    const dropdownNavbar = document.getElementById("dropdownNavbar");
+    let menuIcon = document.querySelector("#menuIcon") as HTMLImageElement;
+
+    let showMenu: boolean = true;
+
+    hamburgerButton?.addEventListener("click", function () {
+      if (window.innerWidth < 1200) {
+        showMenu = !showMenu;
+        navbarMobile?.classList.toggle("hidden");
+        // menuIcon.src = showMenu ? CloseIcon : MenuIcon;
+      } else {
+        navbarHamburger?.classList.toggle("hidden");
+      }
+    });
+
+    dropdownNavbarLink?.addEventListener("click", function () {
+      dropdownNavbar?.classList.toggle("hidden");
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 1200) {
+        navbarMobile?.classList.add("hidden");
+        showMenu = false;
+        // menuIcon.src = MenuIcon;
+      } else {
+        navbarHamburger?.classList.add("hidden");
+        showMenu = true;
+        // menuIcon.src = MenuIcon;
+      }
+    });
+  });
+</script>
