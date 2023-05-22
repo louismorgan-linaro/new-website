@@ -2,23 +2,20 @@
 import CldImage from "../../Cloudinary/CldImage.astro";
 const props = Astro.props;
 const { style, absolute_image } = props;
-console.log(props.absolute_image);
 ---
 
-<div class={(style || "") + " relative w-full "}>
+<div class={(style || "") + " relative w-full"}>
   {
     absolute_image?.image ? (
       <CldImage
         src={absolute_image?.image || ""}
-        class="md:absolute right-0 object-cover overflow-clip m-0 w-full md:w-1/2 h-52 md:h-full"
+        class="md:absolute right-0 object-cover overflow-clip m-0 w-full md:w-1/2 h-52 md:h-full z-0"
       />
     ) : (
       <div />
     )
   }
-  <div
-    class="sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-4 text-color-inherit"
-  >
+  <div class="w-full px-4 text-color-inherit z-1">
     <slot />
   </div>
 </div>
